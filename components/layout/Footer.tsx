@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Phone, MapPin, Clock, Droplets, Instagram } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, MapPin, Clock, Instagram } from 'lucide-react'
 
 const serviceLinks = [
   { href: '/services#exterior', label: 'Exterior Hand Wash' },
@@ -22,8 +23,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-blue-700">
-                <Droplets className="w-5 h-5 text-white" />
+              <div className="relative w-10 h-10 flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Car Detailing in Brighton logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <div className="font-bold text-[#f0f9ff] text-sm leading-tight">Brighton Marina</div>

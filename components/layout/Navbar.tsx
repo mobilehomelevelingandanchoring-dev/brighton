@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Phone, Menu, X, Droplets } from 'lucide-react'
+import Image from 'next/image'
+import { Phone, Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -44,8 +45,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="flex items-center justify-center w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-blue-700 shadow-sky-glow-sm group-hover:shadow-sky-glow transition-all">
-                <Droplets className="w-5 h-5 text-white" />
+              <div className="relative w-10 h-10 flex-shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Car Detailing in Brighton logo"
+                  fill
+                  className="object-contain drop-shadow-sm"
+                  priority
+                />
               </div>
               <div className="hidden sm:block">
                 <div className="text-sm font-bold text-[#f0f9ff] leading-tight">Brighton Marina</div>
