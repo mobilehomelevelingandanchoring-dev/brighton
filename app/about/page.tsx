@@ -7,7 +7,7 @@ import AboutPageContent from '@/components/about/AboutPageContent'
 
 export const metadata: Metadata = aboutMetadata
 
-const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
 export default function AboutPage() {
   return (

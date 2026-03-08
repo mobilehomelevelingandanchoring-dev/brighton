@@ -2,11 +2,11 @@ export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': 'https://brightonmarinahandcarwash.co.uk/#business',
+    '@id': 'https://cardetailinginbrighton.co.uk/#business',
     name: 'Brighton Marina Hand Car Wash',
     description:
       'Professional hand car wash and valeting service at Brighton Marina. Transparent pricing for all vehicle sizes. Open 7 days a week.',
-    url: 'https://brightonmarinahandcarwash.co.uk',
+    url: 'https://cardetailinginbrighton.co.uk',
     telephone: '+447392596532',
     priceRange: '££',
     paymentAccepted: 'Cash, Credit Card, Debit Card, Contactless',
@@ -50,7 +50,7 @@ export function generateLocalBusinessSchema() {
       'Preston Park',
     ].map((area) => ({ '@type': 'City', name: area })),
     hasMap: 'https://maps.app.goo.gl/brightonmarinacarwash',
-    image: 'https://brightonmarinahandcarwash.co.uk/images/og-image.jpg',
+    image: 'https://cardetailinginbrighton.co.uk/images/og-image.jpg',
     sameAs: ['https://maps.app.goo.gl/brightonmarinacarwash'],
   }
 }
@@ -92,7 +92,7 @@ export function generateFAQSchema(faqs: { question: string; answer: string }[]) 
 export function generateGalleryImageSchema(
   images: { src: string; alt: string; caption: string }[]
 ) {
-  const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+  const BASE_URL = 'https://cardetailinginbrighton.co.uk'
   return {
     '@context': 'https://schema.org',
     '@type': 'ImageGallery',

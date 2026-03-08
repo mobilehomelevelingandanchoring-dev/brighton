@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
 const sharedOG = {
   siteName: 'Brighton Marina Hand Car Wash',

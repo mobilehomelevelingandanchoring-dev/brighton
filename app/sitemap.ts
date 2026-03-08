@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
 // Gallery image URLs — included for Google Image Search indexing
 const galleryImageUrls = [

@@ -7,7 +7,7 @@ import GalleryPageContent from '@/components/gallery/GalleryPageContent'
 
 export const metadata: Metadata = galleryMetadata
 
-const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
 const galleryImages = [
   { src: '/gallery/porsche-panamera-exterior-detail-brighton-marina.webp', alt: 'Porsche Panamera exterior detail hand car wash at Brighton Marina — professional paint care', caption: 'Porsche Panamera — Exterior Detail' },

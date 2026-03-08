@@ -8,7 +8,7 @@ import ServicesPageContent from '@/components/services/ServicesPageContent'
 
 export const metadata: Metadata = servicesMetadata
 
-const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
 export default function ServicesPage() {
   const breadcrumbs = [

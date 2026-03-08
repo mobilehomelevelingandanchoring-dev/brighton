@@ -7,7 +7,7 @@ import ContactPageContent from '@/components/contact/ContactPageContent'
 
 export const metadata: Metadata = contactMetadata
 
-const BASE_URL = 'https://brightonmarinahandcarwash.co.uk'
+const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
 export default function ContactPage() {
   return (
