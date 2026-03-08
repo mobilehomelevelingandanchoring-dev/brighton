@@ -18,9 +18,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://cardetailinginbrighton.co.uk',
   },
-  verification: {
-    // Add your Google Search Console verification token here once you have it
-    // google: 'your-verification-token',
+  icons: {
+    icon: [
+      { url: '/logo.png', type: 'image/png' },
+    ],
+    apple: { url: '/logo.png', type: 'image/png' },
+    shortcut: '/logo.png',
   },
 }
 
