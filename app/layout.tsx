@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   description:
     'Hand car wash at Brighton Marina. Transparent pricing for all vehicle sizes. Open 7 days, 9am–6pm. Located in Marina Square, Brighton BN2 5UT. Call +44 7392 596532',
   metadataBase: new URL('https://brightonmarinahandcarwash.co.uk'),
+  alternates: {
+    canonical: 'https://brightonmarinahandcarwash.co.uk',
+  },
+  verification: {
+    // Add your Google Search Console verification token here once you have it
+    // google: 'your-verification-token',
+  },
 }
 
 export default function RootLayout({
