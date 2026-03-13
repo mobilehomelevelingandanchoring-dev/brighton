@@ -121,8 +121,17 @@ export default function Footer() {
             © {new Date().getFullYear()} Brighton Marina Hand Car Wash. All rights reserved.
           </p>
           <div className="flex gap-4">
+            <Link href="/" className="text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors">
+              Home
+            </Link>
             <Link href="/services" className="text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors">
               Services & Pricing
+            </Link>
+            <Link href="/partners" className="text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors">
+              Partners
+            </Link>
+            <Link href="/about" className="text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors">
+              About
             </Link>
             <Link href="/contact" className="text-xs text-[#94a3b8] hover:text-[#38bdf8] transition-colors">
               Contact

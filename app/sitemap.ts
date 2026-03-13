@@ -56,5 +56,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.6,
     },
+    {
+      // Partners — SRV Detailing services and partnerships
+      // Targets: "car detailing partners Manchester", "trusted detailing partners"
+      url: `${BASE_URL}/partners`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
   ]
 }
