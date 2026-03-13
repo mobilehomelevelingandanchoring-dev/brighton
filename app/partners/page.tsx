@@ -30,7 +30,6 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
     },
   },
-  canonical: `${baseUrl}/partners`,
   openGraph: {
     type: 'website',
     url: `${baseUrl}/partners`,
