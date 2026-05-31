@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
+import { getAllAreaSlugs } from '@/lib/areas'
+import { getAllServiceSlugs } from '@/lib/service-pages'
 
 const BASE_URL = 'https://cardetailinginbrighton.co.uk'
 
-// Gallery image URLs — included for Google Image Search indexing
 const galleryImageUrls = [
   `${BASE_URL}/gallery/brighton-marina-car-wash-team-service.jpg`,
   `${BASE_URL}/gallery/porsche-panamera-exterior-detail-brighton-marina.webp`,
@@ -16,9 +17,11 @@ const galleryImageUrls = [
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const areaSlugs = getAllAreaSlugs()
+  const serviceSlugs = getAllServiceSlugs()
+
+  const corePages: MetadataRoute.Sitemap = [
     {
-      // Homepage — primary landing page, highest crawl priority
       url: BASE_URL,
       lastModified: new Date(),
       changeFrequency: 'weekly',
@@ -26,23 +29,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: [`${BASE_URL}/gallery/brighton-marina-car-wash-team-service.jpg`],
     },
     {
-      // Services & Pricing — highest-intent money page
-      // Targets: "hand car wash prices Brighton", "car valeting Brighton Marina"
       url: `${BASE_URL}/services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.95,
+    },
+    {
+      url: `${BASE_URL}/areas`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
-      // Contact — critical for local SEO (NAP + direction queries)
-      // Targets: "car wash near me Brighton", "hand car wash BN2 5UT"
+      url: `${BASE_URL}/faq`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
       url: `${BASE_URL}/contact`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.85,
     },
     {
-      // Gallery — trust signals + Google Image Search traffic
       url: `${BASE_URL}/gallery`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -50,19 +60,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: galleryImageUrls,
     },
     {
-      // About — E-E-A-T signal (Experience, Expertise, Authority, Trust)
+      url: `${BASE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.75,
+    },
+    {
       url: `${BASE_URL}/about`,
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.6,
     },
     {
-      // Partners — SRV Detailing services and partnerships
-      // Targets: "car detailing partners Manchester", "trusted detailing partners"
       url: `${BASE_URL}/partners`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.5,
     },
   ]
+
+  const servicePages: MetadataRoute.Sitemap = serviceSlugs.map((slug) => ({
+    url: `${BASE_URL}/services/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }))
+
+  const areaPages: MetadataRoute.Sitemap = areaSlugs.map((slug) => ({
+    url: `${BASE_URL}/areas/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  return [...corePages, ...servicePages, ...areaPages]
 }

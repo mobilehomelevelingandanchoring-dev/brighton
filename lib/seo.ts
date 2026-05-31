@@ -17,7 +17,7 @@ const sharedOG = {
 export const homepageMetadata: Metadata = {
   title: 'Car Detailing in Brighton | Professional Hand Car Wash Brighton BN2',
   description:
-    'Hand car wash at Brighton Marina. Transparent pricing for all vehicle sizes. Open 7 days, 9am–6pm. Located in Marina Square, Brighton BN2 5UT. Call +44 7392 596532',
+    'Hand car wash at Brighton Marina. Transparent pricing for all vehicle sizes. Open 7 days, 9am–6pm. Located in Marina Square, Brighton BN2 5UT. Call +44 7495 885042',
   keywords: [
     'hand car wash Brighton',
     'car wash Brighton Marina',
@@ -110,11 +110,11 @@ export const aboutMetadata: Metadata = {
 export const contactMetadata: Metadata = {
   title: 'Find Us at Brighton Marina | Hand Car Wash Brighton BN2 5UT',
   description:
-    'Contact Car Detailing in Brighton. Find us at Marina Square, Brighton BN2 5UT. Open 7 days, 9am–6pm. Call +44 7392 596532.',
+    'Contact Car Detailing in Brighton. Find us at Marina Square, Brighton BN2 5UT. Open 7 days, 9am–6pm. Call +44 7495 885042.',
   alternates: { canonical: `${BASE_URL}/contact` },
   openGraph: {
     title: 'Contact & Find Car Detailing in Brighton',
-    description: 'Marina Square, Brighton BN2 5UT. Open every day 9am–6pm. Call +44 7392 596532.',
+    description: 'Marina Square, Brighton BN2 5UT. Open every day 9am–6pm. Call +44 7495 885042.',
     url: `${BASE_URL}/contact`,
     type: 'website',
     ...sharedOG,

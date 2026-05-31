@@ -13,7 +13,7 @@ const geistSans = localFont({
 export const metadata: Metadata = {
   title: 'Car Detailing in Brighton | Professional Hand Car Wash Brighton BN2',
   description:
-    'Hand car wash at Brighton Marina. Transparent pricing for all vehicle sizes. Open 7 days, 9am–6pm. Located in Marina Square, Brighton BN2 5UT. Call +44 7392 596532',
+    'Hand car wash at Brighton Marina. Transparent pricing for all vehicle sizes. Open 7 days, 9am–6pm. Located in Marina Square, Brighton BN2 5UT. Call +44 7495 885042',
   metadataBase: new URL('https://cardetailinginbrighton.co.uk'),
   alternates: {
     canonical: 'https://cardetailinginbrighton.co.uk',

@@ -10,6 +10,7 @@ import GalleryPreview from '@/components/home/GalleryPreview'
 import TestimonialsSection from '@/components/home/TestimonialsSection'
 import LocationSection from '@/components/home/LocationSection'
 import FAQPreviewSection from '@/components/home/FAQPreviewSection'
+import AreasSiloSection from '@/components/home/AreasSiloSection'
 
 export const metadata: Metadata = homepageMetadata
 
@@ -23,6 +24,7 @@ export default function HomePage() {
       <WhyChooseSection />
       <GalleryPreview />
       <TestimonialsSection />
+      <AreasSiloSection />
       <LocationSection />
       <FAQPreviewSection />
     </>
