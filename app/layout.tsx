@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://cardetailinginbrighton.co.uk',
   },
+  verification: {
+    google: 'fPwfRsC0LJDXbIe7CqomqzGrtx2RdD0TlGukWreoBOg',
+  },
   icons: {
     icon: [
       { url: '/logo.png', type: 'image/png' },
