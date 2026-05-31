@@ -105,6 +105,48 @@ export default function AreasPage() {
         </div>
       </section>
 
+      {/* Services */}
+      <section className="py-14 px-4 sm:px-6 border-t border-[#1e3a5f]">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#f0f9ff] mb-2">Our Services</h2>
+          <p className="text-sm text-[#64748b] mb-8">Available to customers across all Brighton &amp; Hove areas</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { href: '/services/car-detailing-brighton', name: 'Car Detailing', price: 'from £10' },
+              { href: '/services/ceramic-coating-brighton', name: 'Ceramic Coating', price: 'from £200' },
+              { href: '/services/paint-correction-brighton', name: 'Paint Correction', price: 'from £150' },
+              { href: '/services/car-valeting-brighton', name: 'Car Valeting', price: 'from £25' },
+              { href: '/services/interior-detailing-brighton', name: 'Interior Detailing', price: 'from £25' },
+              { href: '/services/exterior-detailing-brighton', name: 'Exterior Detailing', price: 'from £10' },
+              { href: '/services/headlight-restoration-brighton', name: 'Headlight Restoration', price: 'from £40' },
+              { href: '/services/mobile-car-detailing-brighton', name: 'Mobile Detailing', price: 'from £30' },
+            ].map((service) => (
+              <Link
+                key={service.href}
+                href={service.href}
+                className="group p-4 rounded-2xl bg-[#0f1624] border border-[#1e3a5f] hover:border-[#0ea5e9]/40 transition-all"
+              >
+                <p className="font-semibold text-[#f0f9ff] text-sm mb-1 group-hover:text-[#38bdf8] transition-colors leading-snug">
+                  {service.name}
+                </p>
+                <p className="text-xs text-[#38bdf8]">{service.price}</p>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-5 flex flex-wrap gap-5">
+            <Link href="/services" className="text-sm text-[#0ea5e9] hover:text-[#38bdf8] transition-colors">
+              View all prices →
+            </Link>
+            <Link href="/faq" className="text-sm text-[#0ea5e9] hover:text-[#38bdf8] transition-colors">
+              Common questions →
+            </Link>
+            <Link href="/blog" className="text-sm text-[#0ea5e9] hover:text-[#38bdf8] transition-colors">
+              Car care guides →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Location info */}
       <section className="py-16 px-4 sm:px-6 bg-[#0f1624] border-t border-[#1e3a5f]">
         <div className="max-w-4xl mx-auto">

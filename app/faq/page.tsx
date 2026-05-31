@@ -248,6 +248,68 @@ export default function FAQPage() {
         </div>
       </section>
 
+      {/* Browse Services */}
+      <section className="py-14 px-4 sm:px-6 border-t border-[#1e3a5f]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-xl font-bold text-[#f0f9ff] mb-2">Browse Our Services</h2>
+          <p className="text-sm text-[#64748b] mb-6">Find pricing and details for every service we offer</p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            {[
+              { href: '/services/car-detailing-brighton', name: 'Car Detailing' },
+              { href: '/services/car-valeting-brighton', name: 'Car Valeting' },
+              { href: '/services/ceramic-coating-brighton', name: 'Ceramic Coating' },
+              { href: '/services/paint-correction-brighton', name: 'Paint Correction' },
+              { href: '/services/interior-detailing-brighton', name: 'Interior Detailing' },
+              { href: '/services/exterior-detailing-brighton', name: 'Exterior Detailing' },
+              { href: '/services/headlight-restoration-brighton', name: 'Headlight Restoration' },
+              { href: '/services/mobile-car-detailing-brighton', name: 'Mobile Detailing' },
+            ].map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="p-3 rounded-xl bg-[#0f1624] border border-[#1e3a5f] text-sm text-[#94a3b8] hover:text-[#38bdf8] hover:border-[#0ea5e9]/40 transition-all text-center"
+              >
+                {s.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Areas links */}
+      <section className="py-10 px-4 sm:px-6 border-t border-[#1e3a5f]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-xl font-bold text-[#f0f9ff] mb-2">Areas We Serve</h2>
+          <p className="text-sm text-[#64748b] mb-6">We serve all Brighton &amp; Hove neighbourhoods from Brighton Marina</p>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { href: '/areas/brighton-marina', name: 'Brighton Marina' },
+              { href: '/areas/hove', name: 'Hove' },
+              { href: '/areas/kemptown', name: 'Kemptown' },
+              { href: '/areas/rottingdean', name: 'Rottingdean' },
+              { href: '/areas/saltdean', name: 'Saltdean' },
+              { href: '/areas/preston-park', name: 'Preston Park' },
+              { href: '/areas/whitehawk', name: 'Whitehawk' },
+              { href: '/areas/hanover', name: 'Hanover' },
+            ].map((a) => (
+              <Link
+                key={a.href}
+                href={a.href}
+                className="px-3 py-1.5 rounded-lg bg-[#0f1624] border border-[#1e3a5f] text-sm text-[#94a3b8] hover:text-[#38bdf8] hover:border-[#0ea5e9]/40 transition-colors"
+              >
+                {a.name}
+              </Link>
+            ))}
+            <Link
+              href="/areas"
+              className="px-3 py-1.5 rounded-lg text-sm text-[#0ea5e9] hover:text-[#38bdf8] transition-colors"
+            >
+              All 19 areas →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Still have questions CTA */}
       <section className="py-14 px-4 sm:px-6 bg-[#0f1624] border-t border-[#1e3a5f]">
         <div className="max-w-3xl mx-auto text-center">
@@ -255,7 +317,7 @@ export default function FAQPage() {
           <p className="text-[#94a3b8] mb-7">
             Call us or visit us at Brighton Marina — walk-ins welcome 9am to 6pm, 7 days a week.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="tel:+447495885042"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold hover:opacity-90 transition-all"
@@ -269,6 +331,12 @@ export default function FAQPage() {
             >
               <MapPin className="w-4 h-4" />
               Find Us
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-[#1e3a5f] text-[#94a3b8] hover:border-[#0ea5e9] hover:text-[#38bdf8] font-semibold transition-all"
+            >
+              Car Care Guides
             </Link>
           </div>
         </div>

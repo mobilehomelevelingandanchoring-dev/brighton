@@ -274,22 +274,29 @@ export default async function ServiceSiloPage({
                 <h3 className="font-bold text-[#f0f9ff] mb-4 text-sm">Areas We Serve</h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    'Brighton Marina', 'Hove', 'Kemptown', 'Rottingdean',
-                    'Saltdean', 'Preston Park', 'Hanover', 'Whitehawk',
+                    { name: 'Brighton Marina', slug: 'brighton-marina' },
+                    { name: 'Hove', slug: 'hove' },
+                    { name: 'Kemptown', slug: 'kemptown' },
+                    { name: 'Rottingdean', slug: 'rottingdean' },
+                    { name: 'Saltdean', slug: 'saltdean' },
+                    { name: 'Preston Park', slug: 'preston-park' },
+                    { name: 'Hanover', slug: 'hanover' },
+                    { name: 'Whitehawk', slug: 'whitehawk' },
                   ].map((area) => (
-                    <span
-                      key={area}
-                      className="px-2 py-1 rounded-lg bg-[#080c14] border border-[#1e3a5f] text-xs text-[#64748b]"
+                    <Link
+                      key={area.slug}
+                      href={`/areas/${area.slug}`}
+                      className="px-2 py-1 rounded-lg bg-[#080c14] border border-[#1e3a5f] text-xs text-[#64748b] hover:text-[#38bdf8] hover:border-[#0ea5e9]/40 transition-colors"
                     >
-                      {area}
-                    </span>
+                      {area.name}
+                    </Link>
                   ))}
                 </div>
                 <Link
                   href="/areas"
                   className="mt-4 block text-xs text-[#0ea5e9] hover:text-[#38bdf8] transition-colors"
                 >
-                  View all areas →
+                  View all 19 areas →
                 </Link>
               </div>
             </div>
@@ -307,7 +314,7 @@ export default async function ServiceSiloPage({
             Walk in any day 9am–6pm at Brighton Marina, or call ahead for specialist services.
             Price always confirmed before we start — no surprises.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="tel:+447495885042"
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white text-blue-700 rounded-xl font-bold hover:bg-blue-50 transition-colors"
@@ -320,6 +327,18 @@ export default async function ServiceSiloPage({
               className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-800 text-white rounded-xl font-semibold hover:bg-blue-900 transition-colors border border-blue-600"
             >
               All Services & Prices
+            </Link>
+            <Link
+              href="/areas"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white rounded-xl font-semibold hover:bg-blue-950 transition-colors"
+            >
+              Areas We Serve
+            </Link>
+            <Link
+              href="/faq"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white rounded-xl font-semibold hover:bg-blue-950 transition-colors"
+            >
+              Common Questions
             </Link>
           </div>
         </div>

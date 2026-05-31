@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { MapPin, Phone, Clock, ChevronRight, CheckCircle2 } from 'lucide-react'
-import { getAreaBySlug, getAllAreaSlugs } from '@/lib/areas'
+import { getAreaBySlug, getAllAreaSlugs, areasData } from '@/lib/areas'
 import { generateLocalBusinessSchema } from '@/lib/schema'
 import JsonLd from '@/components/seo/JsonLd'
 import BreadcrumbNav from '@/components/seo/BreadcrumbNav'
@@ -216,8 +216,54 @@ export default async function AreaPage({
                       </div>
                     ))}
                   </div>
+                  <Link
+                    href="/faq"
+                    className="mt-4 inline-block text-xs text-[#0ea5e9] hover:text-[#38bdf8] transition-colors"
+                  >
+                    View all FAQs →
+                  </Link>
                 </div>
               )}
+
+              {/* Nearby Areas */}
+              <div>
+                <h2 className="text-2xl font-bold text-[#f0f9ff] mb-5">Other Areas We Serve</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {areasData
+                    .filter((a) => a.slug !== area.slug)
+                    .slice(0, 6)
+                    .map((a) => (
+                      <Link
+                        key={a.slug}
+                        href={`/areas/${a.slug}`}
+                        className="flex items-center gap-2 p-3 rounded-xl bg-[#0f1624] border border-[#1e3a5f] hover:border-[#0ea5e9]/40 text-[#94a3b8] hover:text-[#38bdf8] transition-all text-sm"
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-[#0ea5e9] flex-shrink-0" />
+                        <span>{a.name}</span>
+                      </Link>
+                    ))}
+                </div>
+                <Link
+                  href="/areas"
+                  className="mt-4 inline-block text-xs text-[#0ea5e9] hover:text-[#38bdf8] transition-colors"
+                >
+                  View all 19 areas →
+                </Link>
+              </div>
+
+              {/* Blog */}
+              <div className="bg-[#0f1624] border border-[#1e3a5f] rounded-2xl p-6">
+                <h3 className="font-bold text-[#f0f9ff] mb-3">Car Care Guides</h3>
+                <p className="text-sm text-[#94a3b8] mb-4">
+                  Expert tips on protecting your car in Brighton&apos;s coastal environment.
+                </p>
+                <Link
+                  href="/blog"
+                  className="text-sm text-[#0ea5e9] hover:text-[#38bdf8] transition-colors"
+                >
+                  Browse guides & articles →
+                </Link>
+              </div>
             </div>
 
             {/* Sidebar */}
@@ -264,14 +310,19 @@ export default async function AreaPage({
                 <h3 className="font-bold text-[#f0f9ff] mb-4">Pricing</h3>
                 <ul className="space-y-2 text-sm">
                   {[
-                    { label: 'Exterior Wash', price: 'from £10' },
-                    { label: 'Mini Valet', price: 'from £25' },
-                    { label: 'Full Valet', price: 'from £50' },
-                    { label: 'Ceramic Coating', price: 'from £200' },
-                    { label: 'Paint Correction', price: 'from £150' },
+                    { label: 'Exterior Wash', price: 'from £10', slug: 'exterior-detailing-brighton' },
+                    { label: 'Mini Valet', price: 'from £25', slug: 'car-valeting-brighton' },
+                    { label: 'Full Valet', price: 'from £50', slug: 'car-valeting-brighton' },
+                    { label: 'Ceramic Coating', price: 'from £200', slug: 'ceramic-coating-brighton' },
+                    { label: 'Paint Correction', price: 'from £150', slug: 'paint-correction-brighton' },
                   ].map((item) => (
                     <li key={item.label} className="flex items-center justify-between">
-                      <span className="text-[#94a3b8]">{item.label}</span>
+                      <Link
+                        href={`/services/${item.slug}`}
+                        className="text-[#94a3b8] hover:text-[#38bdf8] transition-colors"
+                      >
+                        {item.label}
+                      </Link>
                       <span className="text-[#38bdf8] font-semibold">{item.price}</span>
                     </li>
                   ))}
@@ -282,6 +333,28 @@ export default async function AreaPage({
                 >
                   View full pricing →
                 </Link>
+              </div>
+
+              {/* Quick links */}
+              <div className="bg-[#0f1624] border border-[#1e3a5f] rounded-2xl p-6">
+                <h3 className="font-bold text-[#f0f9ff] mb-4 text-sm">Helpful Links</h3>
+                <div className="space-y-2">
+                  {[
+                    { href: '/faq', label: 'Frequently Asked Questions' },
+                    { href: '/blog', label: 'Car Care Guides' },
+                    { href: '/gallery', label: 'Our Work Gallery' },
+                    { href: '/about', label: 'About Us' },
+                  ].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="flex items-center gap-2 text-sm text-[#94a3b8] hover:text-[#38bdf8] transition-colors"
+                    >
+                      <ChevronRight className="w-3.5 h-3.5 text-[#0ea5e9]" />
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

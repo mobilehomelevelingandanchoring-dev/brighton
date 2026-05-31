@@ -17,6 +17,31 @@ export const metadata: Metadata = {
   },
 }
 
+const categoryServiceLinks: Record<string, { href: string; label: string }[]> = {
+  'Brighton Car Care': [
+    { href: '/services/car-detailing-brighton', label: 'Car Detailing' },
+    { href: '/services/ceramic-coating-brighton', label: 'Ceramic Coating' },
+    { href: '/areas/brighton-marina', label: 'Brighton Marina' },
+    { href: '/areas/hove', label: 'Hove' },
+  ],
+  'Ceramic Coating': [
+    { href: '/services/ceramic-coating-brighton', label: 'Ceramic Coating' },
+    { href: '/services/paint-correction-brighton', label: 'Paint Correction' },
+    { href: '/services/exterior-detailing-brighton', label: 'Exterior Detailing' },
+  ],
+  'Paint Correction': [
+    { href: '/services/paint-correction-brighton', label: 'Paint Correction' },
+    { href: '/services/ceramic-coating-brighton', label: 'Ceramic Coating' },
+    { href: '/services/exterior-detailing-brighton', label: 'Exterior Detailing' },
+  ],
+  'Car Washing & Valeting': [
+    { href: '/services/car-valeting-brighton', label: 'Car Valeting' },
+    { href: '/services/car-detailing-brighton', label: 'Car Detailing' },
+    { href: '/services/interior-detailing-brighton', label: 'Interior Detailing' },
+    { href: '/services/mobile-car-detailing-brighton', label: 'Mobile Detailing' },
+  ],
+}
+
 const blogCategories = [
   {
     category: 'Brighton Car Care',
@@ -247,6 +272,20 @@ export default function BlogPage() {
                   </div>
                 ))}
               </div>
+              {categoryServiceLinks[cat.category] && (
+                <div className="mt-6 flex flex-wrap gap-2 items-center">
+                  <span className="text-xs text-[#475569] mr-1">Related:</span>
+                  {categoryServiceLinks[cat.category].map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="px-3 py-1 rounded-full bg-[#0f1624] border border-[#1e3a5f] text-xs text-[#94a3b8] hover:text-[#38bdf8] hover:border-[#0ea5e9]/40 transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -262,7 +301,7 @@ export default function BlogPage() {
             Visit us at Brighton Marina — walk-ins welcome 9am to 6pm, 7 days a week.
             Or browse our services and prices below.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/services"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-sky-600 to-blue-700 text-white font-semibold hover:opacity-90 transition-all"
@@ -274,6 +313,18 @@ export default function BlogPage() {
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-[#1e3a5f] text-[#94a3b8] hover:border-[#0ea5e9] hover:text-[#38bdf8] font-semibold transition-all"
             >
               Browse FAQs
+            </Link>
+            <Link
+              href="/areas"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-[#1e3a5f] text-[#94a3b8] hover:border-[#0ea5e9] hover:text-[#38bdf8] font-semibold transition-all"
+            >
+              Areas We Serve
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl border border-[#1e3a5f] text-[#94a3b8] hover:border-[#0ea5e9] hover:text-[#38bdf8] font-semibold transition-all"
+            >
+              Contact Us
             </Link>
           </div>
         </div>
